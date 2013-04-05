@@ -45,3 +45,7 @@ width x hight = 19 x 28 になります。
 datが良い感じになったら.txtを生成します。
 
     ./ansi_escape.pl dat/file.dat > motd/file.txt
+
+## gifファイルの取得元
+
+http://www.biwa.ne.jp/~tak-n/dot/ff3/
