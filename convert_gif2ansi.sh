@@ -13,6 +13,9 @@ main () {
 		"monk_stand"| "maken_stand"|"viking_stand" )
 			PALETTE="palette.type1.json"
 			;;
+		"genshi_stand" )
+			PALETTE="palette.type2.json"
+			;;
 		*)
 			;;
 	esac
