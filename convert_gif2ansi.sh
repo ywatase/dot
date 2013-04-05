@@ -8,20 +8,17 @@ main () {
 	fi
 	F_FILENAME=$(basename $F_NAME)
 	F_BASENAME=$(basename $F_FILENAME .gif)
-	CMD=png2ansi2.py
+	PALETTE=palette.default.json
 	case $F_BASENAME in
-		"monk_stand"| "maken_stand")
-			CMD=png2ansi3.py
-			;;
-		"viking_stand" )
-			CMD=png2ansi4.py
+		"monk_stand"| "maken_stand"|"viking_stand" )
+			PALETTE="palette.type1.json"
 			;;
 		*)
 			;;
 	esac
-	python $CMD $F_NAME | perl -nle 'next if $i++ % 3; s/(.){3}/\1/g; print'  > dat/$F_BASENAME.dat
-	perl ./ansi_escape.pl dat/$F_BASENAME.dat
-	perl ./ansi_escape.pl dat/$F_BASENAME.dat  > motd/$F_BASENAME.txt
+	./png2ansi.pl -p $PALETTE $F_NAME | ./resize.pl 3  > dat/$F_BASENAME.dat
+	./ansi_escape.pl dat/$F_BASENAME.dat
+	./ansi_escape.pl dat/$F_BASENAME.dat  > motd/$F_BASENAME.txt
   done
 }
 main "$@"
