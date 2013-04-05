@@ -10,13 +10,13 @@ main () {
 	F_BASENAME=$(basename $F_FILENAME .gif)
 	PALETTE=palette.default.json
 	case $F_BASENAME in
-		"monk_stand"| "maken_stand"|"viking_stand" )
+		"maken_stand" )
 			PALETTE="palette.type1.json"
 			;;
-		"genshi_stand" | "genjutu_stand" | "bard_stand" )
+		"genshi_stand" | "genjutu_stand" | "bard_stand" | "hunter_stand" )
 			PALETTE="palette.type2.json"
 			;;
-		"karate_stand" )
+		"monk_stand" | "karate_stand" | "viking_stand" )
 			PALETTE="palette.type3.json"
 			;;
 		*)
