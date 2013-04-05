@@ -6,7 +6,8 @@ main () {
 	if ! [ -e $F_NAME ] ; then
 		continue
 	fi
-	F_BASENAME=$(basename $F_NAME .gif)
+	F_FILENAME=$(basename $F_NAME)
+	F_BASENAME=$(basename $F_FILENAME .gif)
 	CMD=png2ansi2.py
 	case $F_BASENAME in
 		"monk_stand"| "maken_stand")
@@ -18,9 +19,9 @@ main () {
 		*)
 			;;
 	esac
-	python $CMD $F_NAME | perl -nle 'next if $i++ % 3; s/(.){3}/\1/g; print'  > $F_BASENAME.dat
-	perl ./ansi_escape.pl $F_BASENAME.dat
-	perl ./ansi_escape.pl $F_BASENAME.dat  > $F_BASENAME.txt
+	python $CMD $F_NAME | perl -nle 'next if $i++ % 3; s/(.){3}/\1/g; print'  > dat/$F_BASENAME.dat
+	perl ./ansi_escape.pl dat/$F_BASENAME.dat
+	perl ./ansi_escape.pl dat/$F_BASENAME.dat  > motd/$F_BASENAME.txt
   done
 }
 main "$@"
