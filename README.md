@@ -17,8 +17,10 @@
 * たまねぎ剣士
 * シーフ
 * 学者
+
 * 魔界幻士
 * 幻術士
+* 空手家
 
 ## datの元作成
 
@@ -26,7 +28,8 @@
 
 datとtxtが生成されます
 
-datの色の識別が上手くいかない場合は、./png2ansi?.pyを作成し、カラー調整します。
+datの色の識別が上手くいかない場合は、./png2ansi.pyに読ませるcolor paletteを作成します。
+palette.default.json を参考にしてください
 convert_gif2ansi.sh に条件分岐を付けておきましょう
 
 ANSI Colorではbgcolorとして使えるのは8色(40-47)しかありません。
