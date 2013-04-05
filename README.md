@@ -8,6 +8,10 @@
 * 黒魔道士
 * 白魔道士
 
+## チェック待ち
+
+* ナイト
+
 ## datの元作成
 
     ./convert_gif2ansi.sh gif/file.gif
