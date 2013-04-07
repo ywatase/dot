@@ -13,7 +13,7 @@ main () {
 		"genshi_stand" | "genjutu_stand" | "bard_stand" | "hunter_stand" )
 			PALETTE="palette.type2.json"
 			;;
-		"monk_stand" | "karate_stand" | "viking_stand" | "dnight_stand" | "maken_stand" )
+		"monk_stand" | "karate_stand" | "viking_stand" | "dnight_stand" | "maken_stand" | "husui_stand" | "majin_stand" )
 			PALETTE="palette.type3.json"
 			;;
 		*)
